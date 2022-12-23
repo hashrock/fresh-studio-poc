@@ -5,8 +5,11 @@ interface StudioProps {
 }
 
 
-function addComponent(path: string){
+async function addComponent(path: string){
   console.log(path)
+
+  const res = await fetch('/api/studio', { method: 'PUT', body: JSON.stringify({path: path}) })
+  console.log(res.body)
 }
 
 

@@ -25,6 +25,14 @@ export default function Home() {
         <Counter start={3} />
 
         <Studio path={path} />
+        <button>Hello </button>
+<button>Hello </button>
+<button>Hello </button>
+<button>Hello </button>
+<button>Hello </button>
+<button>Hello </button>
+<button>Hello </button>
+{/* insert here */}
       </div>
     </>
   );
