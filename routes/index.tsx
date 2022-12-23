@@ -32,6 +32,9 @@ export default function Home() {
 <button>Hello </button>
 <button>Hello </button>
 <button>Hello </button>
+<button>Hello </button>
+<button>Hello </button>
+<button>Hello </button>
 {/* insert here */}
       </div>
     </>
