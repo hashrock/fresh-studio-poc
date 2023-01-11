@@ -8,23 +8,23 @@ export const handler: Handlers = {
   },
   async PUT(req, ctx) {
     const decoder = new TextDecoder("utf-8");
-    if(req.body == null) {
+    if (req.body == null) {
       return new Response("no body", { status: 400 });
     }
-    
-    const json = await req.json()
-    const path = json.path.replace(/file:\/\/\//g, "")
-    console.log(path)
 
-    const file = await Deno.readTextFile(path)
+    const json = await req.json();
+    const path = json.path.replace(/file:\/\/\//g, "");
+    console.log(path);
+
+    const file = await Deno.readTextFile(path);
     // insert the code in the next line of <Studio>
-    const code = "<button>Hello </button>\n{/* insert here */}"
-    const newFile = file.replace("{/* insert here */}", code)
-    await Deno.writeTextFile(path, newFile)
+    const code = "<button>Hello </button>\n{/* insert here */}";
+    const newFile = file.replace("{/* insert here */}", code);
+    await Deno.writeTextFile(path, newFile);
 
-    const resp = new Response(JSON.stringify({message: "success"}));
+    const resp = new Response(JSON.stringify({ message: "success" }));
     return resp;
-  },  
+  },
   async POST(req, ctx): Promise<Response> {
     const form = await req.formData();
     const text = form.get("username");
@@ -32,5 +32,5 @@ export const handler: Handlers = {
       return new Response("misformed form", { status: 400 });
     }
     return Response.redirect(req.url, 303);
-  },  
+  },
 };

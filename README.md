@@ -21,5 +21,3 @@ deno task start
 # 検討
 
 - ts-morphを使って、tsファイルそのものをデータとして使えないだろうか？
-
-
